@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static SecondTask.Number;
 
 namespace SecondTask
 {
@@ -16,31 +17,12 @@ namespace SecondTask
             double n = Convert.ToInt32(Console.ReadLine());
             Console.WriteLine("White the num: ");
             double num = Convert.ToInt32(Console.ReadLine());
-            double x = 1;
-
-            for (;;)
-            {
-
-                double nx = x;
-                x = nx + (num / Math.Pow(nx, n - 1) - nx) / num;
-                if (Math.Abs(x - nx) < ACCURACY) break;
-
-            }
-            Console.WriteLine("Newton method result " + x);
+            Console.WriteLine("Newton method result " + NewtoneMethod(num, n, ACCURACY));
             double powMethodResult = Math.Pow(num, 1 / n);
             Console.WriteLine("Pow Method result " + powMethodResult);
-
-            Console.WriteLine("White the number: ");
+            Console.WriteLine("Enter number: ");
             int number = Convert.ToInt32(Console.ReadLine());
-            int result = 0;
-            string s = "";
-            while (number != 0)
-            {
-                result = number % 2;
-                s = result + s;
-                number /= 2;
-            }
-            Console.WriteLine(s);
+            Console.WriteLine("Binary: " + DecimalToBinary(number));
             Console.ReadKey();
         }
     }
