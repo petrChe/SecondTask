@@ -14,7 +14,8 @@ namespace SecondTask
         private string brand;
         private string carNumber;
 
-        public CarOwner(string name, string brand, string carNumber) {
+        public CarOwner(string name, string brand, string carNumber)
+        {
             this.name = name;
             this.brand = brand;
             this.carNumber = carNumber;
@@ -94,23 +95,23 @@ namespace SecondTask
                 return false;
             }
         }
-        
-        public  static List<CarOwner> GetInfoFromFile(string path)
+
+        public static List<CarOwner> GetInfoFromFile(string path)
         {
             string[] lines = File.ReadAllLines(path);
             List<CarOwner> carOwnersList = new List<CarOwner>();
-            
-            for(int i =0; i < lines.Length; i++)
+
+            for (int i = 0; i < lines.Length; i++)
             {
                 string[] datas = new string[lines.Length];
                 datas = lines[i].Split(' ');
                 CarOwner carOwner = new CarOwner(datas[0], datas[1], datas[2]);
                 carOwnersList.Add(carOwner);
-                    
-                    
-                }
-                
-            
+
+
+            }
+
+
             //foreach(CarOwner owner in carOwnersList)
             //    {
             //    Console.WriteLine(owner.GetCarNumber());
@@ -118,21 +119,71 @@ namespace SecondTask
             return carOwnersList;
         }
 
-        public static List<string> GetInfoByBrand(string brand)
+        public static void GetInfoByBrand(string brand)
         {
             List<CarOwner> carOwnersList = CarOwner.GetInfoFromFile(@"K:\Epam C Sharp dot net\textFile2.txt");
             List<string> dataList = new List<string>();
             foreach (CarOwner carOwner in carOwnersList)
             {
-                if (carOwner.GetBrand().Equals(brand)) {
+                if (carOwner.GetBrand().Equals(brand))
+                {
                     string data = carOwner.GetName() + " " + carOwner.GetCarNumber();
                     dataList.Add(data);
                 }
             }
-            
-
-            return dataList;
+            Console.WriteLine("Car owners name and car number:");
+            foreach (string data in dataList)
+            {
+                Console.WriteLine(data);
+            }
+            if(dataList.Count == 0)
+            {
+                Console.WriteLine("There isn't information with such data");
+            }
         }
 
+        public static void GetInfoByRegionNumber(string region)
+        {
+            List<CarOwner> carOwnersList = CarOwner.GetInfoFromFile(@"K:\Epam C Sharp dot net\textFile2.txt");
+            List<string> dataList = new List<string>();
+            foreach (CarOwner carOwner in carOwnersList)
+            {
+                string regionNumber = carOwner.GetCarNumber().Substring(carOwner.GetCarNumber().Length - 2);
+                if (regionNumber.Equals(region))
+                {
+                    string data = carOwner.GetName();
+                    dataList.Add(data);
+                }
+            }
+            Console.WriteLine("Car owners name:");
+            foreach (string data in dataList)
+            {
+                Console.WriteLine(data);
+            }
+            if (dataList.Count == 0)
+            {
+                Console.WriteLine("There isn't information with such data");
+            }
+        }
+
+        public static void GetCarCount(string brand)
+        {
+            List<CarOwner> carOwnersList = CarOwner.GetInfoFromFile(@"K:\Epam C Sharp dot net\textFile2.txt");
+            List<string> dataList = new List<string>();
+            int count = 0;
+            foreach (CarOwner carOwner in carOwnersList)
+            {
+                if (carOwner.GetBrand().Equals(brand))
+                {
+                    count++;
+                }
+            }
+            Console.WriteLine("The cars count:");
+            Console.WriteLine(brand + " " + count + " car(s)");
+            if (dataList.Count == 0)
+            {
+                Console.WriteLine("There isn't information with such data");
+            }
+        }
     }
 }
