@@ -68,6 +68,7 @@ namespace TrainingMatrixProject
                 }
                 Console.WriteLine(str3);
             }
+            Console.ReadKey();
         }
     }
 }

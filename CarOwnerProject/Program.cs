@@ -18,6 +18,7 @@ namespace CarOwnerProject
             GetInfoByBrand(brand);
             GetCarCount(brand);
             GetInfoByRegionNumber(regionNumber);
+            Console.ReadKey();
         }
     }
 }

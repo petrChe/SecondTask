@@ -44,6 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Matrix.cs" />
+    <Compile Include="MatrixException.cs" />
     <Compile Include="MatrixExeption.cs" />
     <Compile Include="MatrixFactory.cs" />
     <Compile Include="MatrixOperator.cs" />

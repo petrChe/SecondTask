@@ -19,6 +19,10 @@ namespace MatrixProject
             matrixArray = new int[rowCount, columnCount]; 
         }
 
+        public Matrix()
+        {
+        }
+
         public int GetRowCount()
         {
             return this.rowCount;
