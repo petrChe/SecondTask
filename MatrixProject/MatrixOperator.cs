@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SecondTask
+namespace MatrixProject
 {
     class MatrixOperator : Operator
     {
@@ -64,6 +64,8 @@ namespace SecondTask
             return resultMatrix;
 
         }
+
+
     }
 }
 

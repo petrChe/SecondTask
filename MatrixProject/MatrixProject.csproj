@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{BE98FDBD-1328-4AAA-BAEF-ECD2588C6670}</ProjectGuid>
+    <ProjectGuid>{AEF5968F-B2D1-429E-B266-5BD2A4097F5E}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>SecondTask</RootNamespace>
-    <AssemblyName>SecondTask</AssemblyName>
+    <RootNamespace>MatrixProject</RootNamespace>
+    <AssemblyName>MatrixProject</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -43,7 +43,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Number.cs" />
+    <Compile Include="Matrix.cs" />
+    <Compile Include="MatrixExeption.cs" />
+    <Compile Include="MatrixFactory.cs" />
+    <Compile Include="MatrixOperator.cs" />
+    <Compile Include="Operator.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
